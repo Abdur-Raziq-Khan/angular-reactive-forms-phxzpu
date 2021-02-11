@@ -1,0 +1,28 @@
+p {
+  font-family: Lato;
+}
+
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+
+.images-preview{
+  padding: 20px 20px 0px 20px;
+  background-color: #fafafa;
+  border-radius: 4px;
+  border: 1px dashed #d9d9d9;
+}
+
+.images-preview .remove-btn{
+  position: absolute;
+  right: 0;
+  border-radius: 0;
+}
+
+.images-preview img {
+  max-height: 150px;
+  object-fit: cover;
+}
+.images-preview .card-body{
+  padding: 1rem;
+}

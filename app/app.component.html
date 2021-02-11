@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2 col-sm-offset-1">
+      <form [formGroup]="demoForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <input type="file" class="custom-file-input form-control" id="files" multiple (change)="detectFiles($event)" accept="image/x-png,image/jpeg">
+        </div>
+
+        <div class="images-preview mt-2" *ngIf="photos.length">
+          <div class="row">
+            <div class="col-md-6 col-lg-3	 col-xl-2" formArrayName="photos" *ngFor="let photo of photos.controls; let i = index;">
+              <div class="card mb-3" [formGroupName]="i">
+                <button type="button" (click)="removePhoto(i)" class="btn btn-danger remove-btn">x</button>
+                <img [src]="photo.controls.url.value" class="card-img-top" alt="Image Preview">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button> 
+      </form>
+    </div>
+  </div>
+</div>
